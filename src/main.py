@@ -16,6 +16,8 @@ class WordsRequest(BaseModel):
 
 @app.post("/api/v1/word-length-calculator")
 def calculate_word_lengths(request: WordsRequest):
+    # Iterate through each word in the request and create a list of dictionaries
+    # Each dictionary contains the word and its length
     result = [
         {"word": word, "length": len(word)}
         for word in request.words
